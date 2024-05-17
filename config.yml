@@ -1,8 +1,29 @@
-CONFIG_NAME: interop
-PRESET_BASE: interop
+# Mainnet config
+
+# Extends the mainnet preset
+PRESET_BASE: mainnet
+
+# Free-form short name of the network that this configuration applies to - known
+# canonical network names include:
+# * 'mainnet' - there can be only one
+# * 'prater' - testnet
+# Must match the regex: [a-z0-9\-]
+CONFIG_NAME: tonl2net
 
 # Genesis
+# ---------------------------------------------------------------
+MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 2
 GENESIS_FORK_VERSION: 0x20000089
+# # Dec 1, 2020, 12pm UTC
+# MIN_GENESIS_TIME: 1671553095
+# # 7200 seconds (2 hours)
+# GENESIS_DELAY: 7200
+
+# Forking
+# ---------------------------------------------------------------
+# Some forks are disabled for now:
+#  - These may be re-assigned to another fork-version later
+#  - Temporarily set to max uint64 value: 2**64 - 1
 
 # Altair
 ALTAIR_FORK_EPOCH: 0
@@ -22,9 +43,17 @@ MAX_WITHDRAWALS_PER_PAYLOAD: 16
 DENEB_FORK_VERSION: 0x20000093
 DENEB_FORK_EPOCH: 0
 
+# Electra
+ELECTRA_FORK_VERSION: 0x20000094
+ELECTRA_FORK_EPOCH: 18446744073709551615  # temporary stub - do not remove
+
 # Time parameters
+# ---------------------------------------------------------------
 SECONDS_PER_SLOT: 12
 SLOTS_PER_EPOCH: 6
 
 # Deposit contract
+# ---------------------------------------------------------------
+DEPOSIT_CHAIN_ID: 32382
+DEPOSIT_NETWORK_ID: 32382
 DEPOSIT_CONTRACT_ADDRESS: 0x4242424242424242424242424242424242424242

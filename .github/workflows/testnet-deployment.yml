@@ -32,10 +32,15 @@ jobs:
     - name: Build dependencies
       run: ./build-dependencies.sh
       
+    - name: Init Testnet
+      run: |
+        ./net-init.sh &
+        sleep 60
+      
     - name: Start Testnet
       run: |
-        ./testnet.sh &
+        ./net-run.sh &
         sleep 60
 
     - name: Run Health check
-      run: ./healthcheck.sh
+      run: ./net-health.sh

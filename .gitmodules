@@ -1,6 +1,0 @@
-[submodule "dependencies/go-ethereum"]
-	path = dependencies/go-ethereum
-	url = https://github.com/ethereum/go-ethereum.git
-[submodule "dependencies/prysm"]
-	path = dependencies/prysm
-	url = https://github.com/prysmaticlabs/prysm.git
